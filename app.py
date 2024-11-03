@@ -8,6 +8,7 @@ from flask_restful import Api
 from flask_bcrypt import Bcrypt
 from flask_mail import Mail
 from models import db 
+from flask_sqlalchemy import SQLAlchemy
 
 # the resources to create endpoints
 from resources.users import userSchema,Login,user_fields
@@ -23,7 +24,7 @@ from resources.passwords import reset_password, redeem_merit_points, change_pass
 
 from admin.myusers import adminUsers
 
-
+db = SQLAlchemy()
 app = Flask(__name__)
 
 CORS(app)
